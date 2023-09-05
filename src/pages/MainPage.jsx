@@ -5,7 +5,6 @@ import SuperQuality from "../sections/SuperQuality";
 import SpecialOffers from "../sections/SpecialOffers";
 import CustomerReviews from "../sections/CustomerReviews";
 import Subscribe from "../sections/Subscribe";
-import Footer from "../sections/Footer";
 
 function MainPage() {
   return (
@@ -30,9 +29,6 @@ function MainPage() {
       </section>
       <section className="padding-x sm:py-32 py-16 w-full">
         <Subscribe />
-      </section>
-      <section className="bg-black padding-x padding-t pb-8">
-        <Footer />
       </section>
     </>
   );

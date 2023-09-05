@@ -1,8 +1,15 @@
 import Nav from "./components/Nav";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useEffect } from "react";
 import MainPage from "./pages/MainPage";
+import { ProductsProviders } from "./contexts/ProductsContexts";
+import DarkMode from "./components/DarkMode";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Favorites from "./pages/Favorites";
+import Footer from "./sections/Footer";
+import Card from "./pages/Card";
+import Products from "./pages/Products";
 
 export default function App() {
   const [isDark, setIsDark] = useLocalStorage(false, "darkmode");
@@ -10,26 +17,31 @@ export default function App() {
     function () {
       if (isDark) {
         document.documentElement.classList.add("dark");
+        document.body.style.background = "black";
       } else {
         document.documentElement.classList.remove("dark");
+        document.body.style.background = "white";
       }
     },
     [isDark]
   );
   return (
-    <main className="relative dark:bg-black">
-      <Nav />
-      <MainPage />
-      <div
-        className="flex items-center justify-center fixed w-14 h-14 rounded-full bg-red-400 bottom-5 right-5  active:bg-red-500 cursor-pointer"
-        onClick={() => setIsDark((mode) => !mode)}
-      >
-        {isDark ? (
-          <BsFillMoonFill color="white" />
-        ) : (
-          <BsFillSunFill color="white" />
-        )}
-      </div>
-    </main>
+    <ProductsProviders>
+      <BrowserRouter>
+        <main className="relative dark:bg-black">
+          <Nav />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="favorites" element={<Favorites />} />
+            <Route path="products" element={<Products />} />
+            <Route path="cart" element={<Card />} />
+          </Routes>
+          <section className="bg-black padding-x padding-t pb-8">
+            <Footer />
+          </section>
+        </main>
+        <DarkMode setIsDark={setIsDark} isDark={isDark} />
+      </BrowserRouter>
+    </ProductsProviders>
   );
 }
