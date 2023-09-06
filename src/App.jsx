@@ -10,6 +10,7 @@ import Favorites from "./pages/Favorites";
 import Footer from "./sections/Footer";
 import Card from "./pages/Card";
 import Products from "./pages/Products";
+import ProductElement from "./pages/ProductElement";
 
 export default function App() {
   const [isDark, setIsDark] = useLocalStorage(false, "darkmode");
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="favorites" element={<Favorites />} />
             <Route path="products" element={<Products />} />
+            <Route path="products/:id" element={<ProductElement />} />
             <Route path="cart" element={<Card />} />
           </Routes>
           <section className="bg-black padding-x padding-t pb-8">

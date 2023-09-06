@@ -19,7 +19,7 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "loading":
-      return { ...state, isLoading: true };
+      return { ...state, isLoading: true, error: "" };
     case "addToCard":
       return {
         ...state,
@@ -57,6 +57,22 @@ function reducer(state, action) {
         sortBy: action.payload,
       };
     }
+    case "setError": {
+      return {
+        ...state,
+        error: action.payload,
+      };
+    }
+    case "rejected":
+      return { ...state, isLoading: false, error: action.payload };
+
+    case "products/loaded":
+      return {
+        ...state,
+        isLoading: false,
+        error: "",
+        products: action.payload,
+      };
     default:
       throw new Error("Unknown Action");
   }
@@ -73,6 +89,7 @@ function ProductsProviders({ children }) {
       recProds,
       search,
       sortBy,
+      products,
     },
     dispatch,
   ] = useReducer(reducer, initialState);
@@ -117,6 +134,8 @@ function ProductsProviders({ children }) {
         search,
         setSelectedOption,
         sortBy,
+        dispatch,
+        products,
       }}
     >
       {children}

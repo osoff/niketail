@@ -6,10 +6,16 @@ function CartProd({ imgURL, name, price }) {
   const { likeProds, deleteFromCard, addToLike, deleteFromLike } = useProduct();
   return (
     <div className="flex border-b-[1px] py-5 w-full  ">
-      <img src={imgURL} alt={name} width={157} height={133} />
+      <img
+        src={imgURL}
+        alt={name}
+        width={157}
+        height={133}
+        className=" rounded-lg"
+      />
       <div className="w-full ml-3 relative">
         <div className="flex  font-bold justify-between text-xl font-palanquin ">
-          <p>{name}</p>
+          <p className=" w-[80%]">{name}</p>
           <p className=" text-coral-red ">{price}</p>
         </div>
         <div className="mt-4 flex justify-start gap-2.5">
