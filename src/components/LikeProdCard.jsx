@@ -17,7 +17,7 @@ function LikeProdCard({ imgURL, name, price, edit }) {
           }}
         />
       )}
-      <img src={imgURL} alt={name} />
+      <img src={imgURL} alt={name} width={390} />
       <div className="mt-8 flex justify-start gap-2.5">
         <img src={star} alt="rating" height={24} width={24} />
         <p className="font-montserrat text-xl leading-normal text-slate-gray">
@@ -32,11 +32,20 @@ function LikeProdCard({ imgURL, name, price, edit }) {
           {price}
         </p>
         {cardProds.map((el) => el.imgURL).includes(imgURL) ? (
-          <Button bgC={"bg-transparent"} txtColor={"text-white"}>
+          <Button
+            bgC={"bg-transparent"}
+            txtColor={"text-white"}
+            onClick={(e) => e.preventDefault()}
+          >
             <span className=" text-black dark:text-white text-xs">Added</span>
           </Button>
         ) : (
-          <Button onClick={() => addToCard({ imgURL, name, price })}>
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              addToCard({ imgURL, name, price });
+            }}
+          >
             <span className="  text-xs">Add to your bag</span>
           </Button>
         )}

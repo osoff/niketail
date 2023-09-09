@@ -1,52 +1,54 @@
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import Search from "../sections/Search";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useProduct } from "../contexts/ProductsContexts";
 import { dataAsos } from "../constants";
 import Loader from "../components/Loader";
-import Error from "../components/ErrorMes";
-import PopularProd from "../sections/PopularProd";
-import PopularProdCard from "../components/PopularProdCard";
-
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "3c32af3ff6msh18e4ec170833a06p1767bajsnc9dcb02894bb",
-    "X-RapidAPI-Host": "asos10.p.rapidapi.com",
-  },
-};
+import ErrorMes from "../components/ErrorMes";
+import ProductsList from "../sections/ProductsList";
+import { useKey } from "../hooks/useKey";
 
 function Products() {
   const [params] = useSearchParams();
 
-  const { dispatch, products, isLoading, error } = useProduct();
+  const { dispatch, isLoading, error } = useProduct();
   const search = params.get("search");
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(
     function () {
       async function getProd() {
-        try {
-          dispatch({ type: "loading" });
-          // const res = await fetch(
-          //   `https://asos10.p.rapidapi.com/api/v1/getProductListBySearchTerm?searchTerm=${
-          //     search === "" || "null" ? "Boots" : search
-          //   }&currency=USD&country=US&store=US&languageShort=en&sizeSchema=US&limit=50&offset=0`,
-          //   options
-          // );
-          // const data = await res.json();
-          let data;
-          setTimeout(() => {
-            data = dataAsos;
-            console.log(data.data.products);
-            if (data.data.itemCount === 0) {
-              throw new Error("Products not found");
+        dispatch({ type: "loading" });
+
+        let data;
+        setTimeout(() => {
+          data = dataAsos;
+          try {
+            if (search === "" || search === "null" || search === null) {
+              dispatch({
+                type: "products/loaded",
+                payload: data.data.products,
+              });
+            } else {
+              dispatch({
+                type: "products/loaded",
+                payload: data.data.products.filter((el) =>
+                  el.name.includes(search)
+                ),
+              });
+              if (
+                data.data.products.filter((el) => el.name.includes(search))
+                  .length === 0
+              ) {
+                throw new Error("Products not found");
+              }
             }
-            dispatch({ type: "products/loaded", payload: data.data.products });
-          }, 2000);
-        } catch (err) {
-          console.log("qwewqe");
-          dispatch({ type: "rejected", payload: err.message });
-        }
+          } catch (e) {
+            console.log(e.message, "<-----");
+            dispatch({ type: "rejected", payload: e.message });
+          }
+        }, 1000);
       }
       getProd();
     },
@@ -63,26 +65,8 @@ function Products() {
         }`}
       >
         {isLoading && <Loader />}
-        {error && <Error text={error} />}
-        {!isLoading && !error && (
-          <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 mb-28">
-            {products.map((el) => (
-              <Link
-                to={`${el.id}`}
-                className=" p-5 hover:cursor-pointer hover:bg-slate-50 rounded-lg dark:text-white dark:hover:bg-slate-900"
-              >
-                <div key={el.id}>
-                  <PopularProdCard
-                    imgURL={`https://${el.imageUrl}`}
-                    name={el.name}
-                    price={el.price.current.text}
-                    imgRounded={true}
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
+        {error && <ErrorMes text={error} />}
+        {!isLoading && !error && <ProductsList />}
       </section>
     </>
   );

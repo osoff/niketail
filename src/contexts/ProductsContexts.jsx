@@ -73,6 +73,11 @@ function reducer(state, action) {
         error: "",
         products: action.payload,
       };
+    case "product/selected":
+      return {
+        ...state,
+        currentProd: action.payload,
+      };
     default:
       throw new Error("Unknown Action");
   }

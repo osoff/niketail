@@ -1,3 +1,4 @@
+import { useSearchParams } from "react-router-dom";
 import Button from "./Button";
 
 function Input({
@@ -7,7 +8,11 @@ function Input({
   padding = "2.5",
   getInputData,
   actionButton,
+  val,
 }) {
+  const [params] = useSearchParams();
+  const search = params.get("search");
+  console.log(search);
   return (
     <div
       className={`${
@@ -16,6 +21,7 @@ function Input({
     >
       <input
         type="text"
+        defaultValue={search === "null" ? " " : search}
         placeholder={placeholder}
         onChange={(e) => getInputData(e.target.value)}
         className="input text-black dark:bg-black dark:text-white rounded-full "

@@ -6,9 +6,12 @@ import Recomendation from "../sections/Recomendation";
 
 function Card() {
   const { recProd, likeProds } = useProduct();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-      <section className=" padding  w-full dark:text-white">
+      <section className="padding w-full dark:text-white">
         <CartElements />
       </section>
       {likeProds.length > 0 && (

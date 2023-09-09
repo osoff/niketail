@@ -3,7 +3,7 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useProduct } from "../contexts/ProductsContexts";
 import { useState } from "react";
 
-function PopularProdCard({ imgURL, name, price, imgRounded = false }) {
+function PopularProdCard({ id, imgURL, name, price, imgRounded = false }) {
   const { addToLike, deleteFromLike, likeProds } = useProduct();
   const [mouseEnter, setMouseEnter] = useState(false);
   return (
@@ -39,7 +39,7 @@ function PopularProdCard({ imgURL, name, price, imgRounded = false }) {
             e.preventDefault();
             likeProds.map((el) => el.imgURL).includes(imgURL)
               ? deleteFromLike(imgURL)
-              : addToLike({ imgURL, name, price });
+              : addToLike({ id, imgURL, name, price });
           }}
         >
           {likeProds.map((el) => el.imgURL).includes(imgURL) ? (

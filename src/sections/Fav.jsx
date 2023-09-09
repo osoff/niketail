@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../components/Button";
 import { useProduct } from "../contexts/ProductsContexts";
 import LikeProdCard from "../components/LikeProdCard";
+import { Link } from "react-router-dom";
 
 function Fav({ button = true }) {
   const { likeProds } = useProduct();
@@ -22,15 +23,21 @@ function Fav({ button = true }) {
         )}
       </div>
       <div
-        className={`flex justify-${
-          likeProds.length > 0 ? "start" : "center"
-        } items-center mt-5 gap-16 w-full min-h-[60vh]`}
+        className={`${
+          likeProds.length === 0
+            ? "flex justify-center items-center mt-5 gap-16 w-full min-h-[60vh]"
+            : "grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 mb-28"
+        }`}
       >
         {likeProds.length > 0 ? (
-          likeProds.map((el, i) => (
-            <div key={i}>
+          likeProds.map((el) => (
+            <Link
+              key={el.id}
+              to={`/products/${el.id}`}
+              className=" p-5 hover:cursor-pointer hover:bg-slate-50 rounded-lg dark:text-white dark:hover:bg-slate-900"
+            >
               <LikeProdCard {...el} edit={edit} />
-            </div>
+            </Link>
           ))
         ) : (
           <h3 className=" font-palanquin info-text">

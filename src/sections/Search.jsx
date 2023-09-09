@@ -3,6 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { useProduct } from "../contexts/ProductsContexts";
 import { useNavigate } from "react-router-dom";
+import { useKey } from "../hooks/useKey";
 const options = [
   { value: "desc", label: "Hight-Low" },
   { value: "asc", label: "Low-Hight" },
@@ -14,6 +15,9 @@ function Search() {
   function setSerachParam() {
     navigate(`?search=${search}`);
   }
+
+  useKey("Enter", setSerachParam);
+  useKey("Escape", () => navigate("/products"));
 
   // useEffect(
   //   function () {

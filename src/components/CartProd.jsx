@@ -16,7 +16,7 @@ function CartProd({ imgURL, name, price }) {
       <div className="w-full ml-3 relative">
         <div className="flex  font-bold justify-between text-xl font-palanquin ">
           <p className=" w-[80%]">{name}</p>
-          <p className=" text-coral-red ">{price}</p>
+          <p className=" font-montserrat text-coral-red ">{price}</p>
         </div>
         <div className="mt-4 flex justify-start gap-2.5">
           <img src={star} alt="rating" height={24} width={24} />

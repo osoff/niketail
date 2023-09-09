@@ -5,8 +5,12 @@ import SuperQuality from "../sections/SuperQuality";
 import SpecialOffers from "../sections/SpecialOffers";
 import CustomerReviews from "../sections/CustomerReviews";
 import Subscribe from "../sections/Subscribe";
+import { useEffect } from "react";
 
 function MainPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="xl:padding-l wide:padding-r padding-b">

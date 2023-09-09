@@ -1,5 +1,5 @@
 function ErrorMes({ text }) {
-  return <div className="info-text text-coral-red">{text}</div>;
+  return <div className="info-text mb-40 text-coral-red">{text}</div>;
 }
 
-export default Error;
+export default ErrorMes;

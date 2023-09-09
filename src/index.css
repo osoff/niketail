@@ -12,6 +12,15 @@
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  --tw-text-opacity: 1;
+  background-color: rgb(255 100 82 / var(--tw-text-opacity));
+  border-radius: 3px;
+}
+
 @layer components {
   .max-container {
     max-width: 1440px;
