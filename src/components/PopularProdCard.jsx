@@ -3,7 +3,14 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useProduct } from "../contexts/ProductsContexts";
 import { useState } from "react";
 
-function PopularProdCard({ id, imgURL, name, price, imgRounded = false }) {
+function PopularProdCard({
+  id,
+  imgURL,
+  name,
+  price,
+  imgRounded = false,
+  viewHeart = true,
+}) {
   const { addToLike, deleteFromLike, likeProds } = useProduct();
   const [mouseEnter, setMouseEnter] = useState(false);
   return (
@@ -34,23 +41,25 @@ function PopularProdCard({ id, imgURL, name, price, imgRounded = false }) {
         <p className="  font-semibold font-montserrat text-coral-red text-2xl leading-normal">
           {price}
         </p>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            likeProds.map((el) => el.imgURL).includes(imgURL)
-              ? deleteFromLike(imgURL)
-              : addToLike({ id, imgURL, name, price });
-          }}
-        >
-          {likeProds.map((el) => el.imgURL).includes(imgURL) ? (
-            <AiFillHeart
-              className="mr-2 cursor-pointer text-coral-red ease-in duration-200"
-              size={"25"}
-            />
-          ) : (
-            <AiOutlineHeart className="mr-2 cursor-pointer " size={"25"} />
-          )}
-        </button>
+        {viewHeart && (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              likeProds.map((el) => el.imgURL).includes(imgURL)
+                ? deleteFromLike(id)
+                : addToLike({ id, imgURL, name, price });
+            }}
+          >
+            {likeProds.map((el) => el.imgURL).includes(imgURL) ? (
+              <AiFillHeart
+                className="mr-2 cursor-pointer text-coral-red ease-in duration-200"
+                size={"25"}
+              />
+            ) : (
+              <AiOutlineHeart className="mr-2 cursor-pointer " size={"25"} />
+            )}
+          </button>
+        )}
       </div>
     </div>
   );

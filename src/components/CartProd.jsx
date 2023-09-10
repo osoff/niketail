@@ -2,7 +2,7 @@ import { star } from "../assets/icons";
 import { useProduct } from "../contexts/ProductsContexts";
 import { AiOutlineDelete, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
-function CartProd({ imgURL, name, price }) {
+function CartProd({ id, imgURL, name, price }) {
   const { likeProds, deleteFromCard, addToLike, deleteFromLike } = useProduct();
   return (
     <div className="flex border-b-[1px] py-5 w-full  ">
@@ -29,7 +29,7 @@ function CartProd({ imgURL, name, price }) {
             <AiFillHeart
               className="text-coral-red cursor-pointer"
               size={"25"}
-              onClick={() => deleteFromLike(imgURL)}
+              onClick={() => deleteFromLike(id)}
             />
           ) : (
             <AiOutlineHeart

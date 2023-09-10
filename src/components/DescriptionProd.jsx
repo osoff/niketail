@@ -1,12 +1,20 @@
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useProduct } from "../contexts/ProductsContexts";
 import Button from "./Button";
 import { star } from "../assets/icons";
 
 function DescriptionProd() {
-  const { currentProd, addToCard, addToLike } = useProduct();
-  const { imageUrl: imgURL, name, price } = currentProd;
+  const {
+    currentProd,
+    addToCard,
+    addToLike,
+    likeProds,
+    deleteFromLike,
+    cardProds,
+  } = useProduct();
+  const { id, imageUrl: imgURL, name, price } = currentProd;
   const prodToBag = {
+    id,
     imgURL: "https://" + imgURL,
     name,
     price: price?.current.text,
@@ -24,9 +32,30 @@ function DescriptionProd() {
           {currentProd.price?.current.text}
         </h3>
       </div>
-      <Button onClick={() => addToCard(prodToBag)}>Add to Bag</Button>
-      <Button onClick={() => addToLike(prodToBag)} bgC={"bg-transparent"}>
-        Favorite <AiOutlineHeart />
+      <Button
+        bgC={cardProds.map((el) => el.id).includes(id) ? "transaprent" : ""}
+        onClick={() =>
+          !cardProds.map((el) => el.id).includes(id) && addToCard(prodToBag)
+        }
+      >
+        {cardProds.map((el) => el.id).includes(id)
+          ? "Added to your bag"
+          : "Add to Bag"}
+      </Button>
+      <Button
+        onClick={() =>
+          likeProds.map((el) => el.id).includes(id)
+            ? deleteFromLike(id)
+            : addToLike(prodToBag)
+        }
+        bgC={"bg-transparent"}
+      >
+        Favorite
+        {likeProds.map((el) => el.id).includes(id) ? (
+          <AiFillHeart />
+        ) : (
+          <AiOutlineHeart />
+        )}
       </Button>
       <p className=" info-text text-center">
         This product is excluded from site promotions and discounts.

@@ -3,7 +3,7 @@ import { AiFillHeart } from "react-icons/ai";
 import { useProduct } from "../contexts/ProductsContexts";
 import Button from "./Button";
 
-function LikeProdCard({ imgURL, name, price, edit }) {
+function LikeProdCard({ id, imgURL, name, price, edit }) {
   const { deleteFromLike, addToCard, cardProds } = useProduct();
   return (
     <div className="flex flex-1 flex-col w-full relative">
@@ -12,8 +12,9 @@ function LikeProdCard({ imgURL, name, price, edit }) {
           className=" absolute top-0 right-0 mt-2 mr-2 cursor-pointer text-coral-red ease-in duration-200 "
           size={"25"}
           color="red"
-          onClick={() => {
-            deleteFromLike(imgURL);
+          onClick={(e) => {
+            e.preventDefault();
+            deleteFromLike(id);
           }}
         />
       )}

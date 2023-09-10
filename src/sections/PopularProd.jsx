@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PopularProdCard from "../components/PopularProdCard";
 import { products } from "../constants";
 
@@ -30,7 +31,7 @@ function PopularProd({
         }  grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14`}
       >
         {recomendationProducts.map((prod) => (
-          <PopularProdCard key={prod.name} {...prod} />
+          <PopularProdCard key={prod.imgURL} {...prod} viewHeart={false} />
         ))}
       </div>
     </section>

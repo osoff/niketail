@@ -55,7 +55,7 @@ function Products() {
     [search, dispatch]
   );
   return (
-    <>
+    <div className=" pt-8">
       <section className="padding">
         <Search />
       </section>
@@ -68,7 +68,7 @@ function Products() {
         {error && <ErrorMes text={error} />}
         {!isLoading && !error && <ProductsList />}
       </section>
-    </>
+    </div>
   );
 }
 

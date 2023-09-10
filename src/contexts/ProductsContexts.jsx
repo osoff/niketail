@@ -44,7 +44,7 @@ function reducer(state, action) {
     case "deleteFromLike":
       return {
         ...state,
-        likeProds: state.likeProds.filter((el) => el.imgURL !== action.payload),
+        likeProds: state.likeProds.filter((el) => el.id !== action.payload),
       };
     case "setSearchPar":
       return {
@@ -112,8 +112,8 @@ function ProductsProviders({ children }) {
   function addToLike(product) {
     dispatch({ type: "addToLike", payload: product });
   }
-  function deleteFromLike(imgURL) {
-    dispatch({ type: "deleteFromLike", payload: imgURL });
+  function deleteFromLike(id) {
+    dispatch({ type: "deleteFromLike", payload: id });
   }
   function setSearchPar(search) {
     dispatch({ type: "setSearchPar", payload: search });
