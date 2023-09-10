@@ -4,7 +4,6 @@ import { useProduct } from "../contexts/ProductsContexts";
 
 function Chekout() {
   const { cardProds } = useProduct();
-  console.log(cardProds);
   return (
     <div className="flex flex-col shadow-xl  p-10 rounded-md dark:border-[1px] dark: white">
       <h2 className=" font-palanquin text-2xl font-bold text-coral-red ">

@@ -5,7 +5,7 @@ import Fav from "../sections/Fav";
 import Recomendation from "../sections/Recomendation";
 
 function Card() {
-  const { recProd, likeProds } = useProduct();
+  const { likeProds } = useProduct();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,12 +15,12 @@ function Card() {
         <CartElements />
       </section>
       {likeProds.length > 0 && (
-        <section className=" padding-x bg-pale-blue dark:bg dark:bg-zinc-950">
+        <section className=" pt-6 padding-x bg-pale-blue dark:bg dark:bg-zinc-950">
           <Fav button={false} />
         </section>
       )}
       <section className="padding-x pb-20">
-        <Recomendation recomendationProducts={recProd} />
+        <Recomendation />
       </section>
     </>
   );

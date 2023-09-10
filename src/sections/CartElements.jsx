@@ -4,7 +4,6 @@ import Chekout from "./Chekout";
 
 function CartElements() {
   const { cardProds } = useProduct();
-  console.log(cardProds);
   return (
     <div className=" min-h-[60vh]  max-container">
       <div className="flex w-full justify-around items-start mt-4">

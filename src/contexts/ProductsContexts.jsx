@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
-import { products } from "../constants";
+import { dataAsos, products } from "../constants";
 
 const ProductsContext = createContext();
 
@@ -7,7 +7,7 @@ const initialState = {
   likeProds: [],
   cardProds: [],
   currentProd: {},
-  recProds: products,
+  recProds: dataAsos.data.products.slice(0, 4),
   isLoading: false,
   error: "",
 
@@ -24,9 +24,6 @@ function reducer(state, action) {
       return {
         ...state,
         cardProds: [...state.cardProds, action.payload],
-        recProds: state.recProds.filter(
-          (el) => el.imgURL !== action.payload.imgURL
-        ),
       };
     case "deleteFromCard":
       return {
@@ -37,9 +34,6 @@ function reducer(state, action) {
       return {
         ...state,
         likeProds: [...state.likeProds, action.payload],
-        recProds: state.recProds.filter(
-          (el) => el.imgURL !== action.payload.imgURL
-        ),
       };
     case "deleteFromLike":
       return {

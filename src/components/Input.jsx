@@ -12,7 +12,6 @@ function Input({
 }) {
   const [params] = useSearchParams();
   const search = params.get("search");
-  console.log(search);
   return (
     <div
       className={`${

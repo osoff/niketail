@@ -45,7 +45,6 @@ function Products() {
               }
             }
           } catch (e) {
-            console.log(e.message, "<-----");
             dispatch({ type: "rejected", payload: e.message });
           }
         }, 1000);

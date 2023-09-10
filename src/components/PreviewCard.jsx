@@ -3,9 +3,7 @@ import { useProduct } from "../contexts/ProductsContexts";
 
 function PreviewCard() {
   const { currentProd } = useProduct();
-  console.log(currentProd, "curprod");
   const [bigImg, setBigImg] = useState("");
-  console.log(bigImg, "bigImg");
   return (
     <div className="flex gap-3 ">
       <div className="flex-col">

@@ -8,7 +8,7 @@ function Fav({ button = true }) {
   const { likeProds } = useProduct();
   const [edit, setEdit] = useState(false);
   return (
-    <section className="w-full gap-10 p-2 dark:text-white">
+    <section className="w-full gap-10 dark:text-white">
       <div className="flex justify-between items-center w-full">
         <h2 className="text-xl font-palanquin font-bold">
           <span className="text-coral-red bg">Favorite</span> Products

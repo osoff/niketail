@@ -11,6 +11,7 @@ function MainViewProduct({ idProd }) {
       const currProd = dataAsos.data.products
         .filter((el) => String(el.id) === String(idProd))
         .at(0);
+      console.log(currProd);
       dispatch({ type: "product/selected", payload: currProd });
     },
     [dispatch, idProd]
