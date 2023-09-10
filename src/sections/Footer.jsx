@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { copyrightSign } from "../assets/icons";
 import { footerLogo } from "../assets/images";
 import { footerLinks, socialMedia } from "../constants";
@@ -33,12 +34,11 @@ function Footer() {
               </h4>
               <ul>
                 {section.links.map((link) => (
-                  <li
-                    key={link.name}
-                    className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:text-slate-gray cursor-pointer"
-                  >
-                    <a>{link.name}</a>
-                  </li>
+                  <Link key={link.name} to={`/products/${link.link}`}>
+                    <li className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:text-slate-gray cursor-pointer">
+                      <p>{link.name}</p>
+                    </li>
+                  </Link>
                 ))}
               </ul>
             </div>

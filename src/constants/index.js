@@ -104,16 +104,30 @@ export const reviews = [
   },
 ];
 
+export const socialMedia = [
+  { src: facebook, alt: "facebook logo" },
+  { src: twitter, alt: "twitter logo" },
+  { src: instagram, alt: "instagram logo" },
+];
+
+export const like = [
+  {
+    imgURL: shoe6,
+    name: "Nike Air Jordan-100",
+    price: "$220.20",
+  },
+];
+
 export const footerLinks = [
   {
     title: "Products",
     links: [
-      { name: "Simmi London", link: "205107280" },
-      { name: "Air Max 1", link: "/" },
-      { name: "Air Jordan 1", link: "/" },
-      { name: "Air Force 2", link: "/" },
-      { name: "Nike Waffle Racer", link: "/" },
-      { name: "Nike Cortez", link: "/" },
+      { name: "Simmi London", link: 205107280 },
+      { name: "Dr Martens", link: 204559048 },
+      { name: "Columbia peakfreak", link: 204042652 },
+      { name: "Columbia Fairbanks", link: 203782440 },
+      { name: "Simmi London Prince", link: 204856431 },
+      { name: "Charles & Keith", link: 203992480 },
     ],
   },
   {
@@ -132,20 +146,6 @@ export const footerLinks = [
       { name: "customer@nike.com", link: "mailto:customer@nike.com" },
       { name: "+92554862354", link: "tel:+92554862354" },
     ],
-  },
-];
-
-export const socialMedia = [
-  { src: facebook, alt: "facebook logo" },
-  { src: twitter, alt: "twitter logo" },
-  { src: instagram, alt: "instagram logo" },
-];
-
-export const like = [
-  {
-    imgURL: shoe6,
-    name: "Nike Air Jordan-100",
-    price: "$220.20",
   },
 ];
 

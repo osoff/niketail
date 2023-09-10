@@ -19,7 +19,7 @@ function Card() {
           <Fav button={false} />
         </section>
       )}
-      <section className="padding-x pb-20">
+      <section className="  pt-6 padding-x pb-20">
         <Recomendation />
       </section>
     </>
