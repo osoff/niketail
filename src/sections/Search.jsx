@@ -26,7 +26,7 @@ function Search() {
   //   [sortBy, navigate]
   // );
   return (
-    <div className="flex justify-between">
+    <div className="sm:flex justify-between  block w-full">
       <h2 className="font-palanquin font-bold text-3xl text-coral-red">
         Products
       </h2>

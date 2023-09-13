@@ -54,7 +54,7 @@ function Products() {
     [search, dispatch]
   );
   return (
-    <div className=" pt-8">
+    <div className="pt-20 sm:pt-8">
       <section className="padding">
         <Search />
       </section>

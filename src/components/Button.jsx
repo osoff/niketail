@@ -1,8 +1,16 @@
-function Button({ children, iconURL, bgC, borderC, txtColor, onClick }) {
+function Button({
+  children,
+  iconURL,
+  bgC,
+  borderC,
+  txtColor,
+  onClick,
+  otherStyle,
+}) {
   return (
     <button
       onClick={onClick}
-      className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none ${
+      className={`flex justify-center ${otherStyle} items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none ${
         bgC
           ? `${bgC} ${txtColor} ${borderC} dark:text-white dark:bg-black dark:border-white`
           : "bg-coral-red  text-white border-coral-red active:bg-red-500"

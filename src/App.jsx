@@ -29,7 +29,7 @@ export default function App() {
   return (
     <ProductsProviders>
       <BrowserRouter>
-        <main className="relative dark:bg-black">
+        <main className="relative dark:bg-black transition-colors ease-in duration-200">
           <Nav />
           <Routes>
             <Route path="/" element={<MainPage />} />

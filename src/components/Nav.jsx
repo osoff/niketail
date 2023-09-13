@@ -4,7 +4,7 @@ import { headerLogo } from "../assets/images";
 // import { hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { AiFillHeart } from "react-icons/ai";
+import { AiFillHeart, AiOutlineMenu } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { useProduct } from "../contexts/ProductsContexts";
 function Nav() {
@@ -37,11 +37,11 @@ function Nav() {
   }, [prevScrollY]);
   return (
     <header
-      className={`padding-x py-8  z-20 w-full fixed  dark:bg-black bg-white bg-opacity-90 dark:bg-opacity-70 ${
+      className={`padding-x py-8  z-20 w-full fixed  dark:bg-black bg-white bg-opacity-90 dark:bg-opacity-70 dark:text-white ${
         showNavBar ? "top-0" : "-top-16"
-      } ease-in duration-200`}
+      }  ease-in duration-200`}
     >
-      <nav className="flex justify-between items-center max-container">
+      <nav className="flex  justify-between items-center max-container transition ease-in duration-200">
         <a href="/">
           <img src={headerLogo} alt="logo" width={130} height={29} />
         </a>
@@ -57,7 +57,7 @@ function Nav() {
             </li>
           ))}
         </ul>
-        <div className="max-lg:hidden flex gap-5 mr-5 text-2xl">
+        <div className="max-lg:justify-start items-center flex gap-5  text-2xl">
           <div
             title="Favourites"
             className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
@@ -81,18 +81,9 @@ function Nav() {
               </div>
             </Link>
           </div>
-        </div>
-        <div className="hidden max-lg:flex max-lg:content-end">
-          <img
-            src={hamburger}
-            alt="Hamburger"
-            width={25}
-            height={25}
-            className="order-1"
-          />
-          <div className=" flex gap-3 mr-5 text-2xl">
+          <div className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer">
+            {/* <div className=" flex gap-3  text-2xl max-lg:items-center max-lg:justify-center">
             <div
-              to={"favorites"}
               title="Favourites"
               className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
             >
@@ -104,16 +95,18 @@ function Nav() {
               title="Bag"
               className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
             >
-              <Link to="cart">
-                <div className="relative inline-flex items-center">
+              <div className="relative inline-flex items-center">
+                <Link to="cart">
                   <AiOutlineShoppingCart />
                   <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
                     20
                   </div>
-                </div>
-              </Link>
-            </div>
+                </Link>
+              </div>
+            </div> */}
+            <AiOutlineMenu className="order-1 h-[24px] w-[24px]" />
           </div>
+          {/* </div> */}
         </div>
       </nav>
     </header>

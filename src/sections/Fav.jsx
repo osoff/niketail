@@ -8,7 +8,7 @@ function Fav({ button = true }) {
   const { likeProds } = useProduct();
   const [edit, setEdit] = useState(false);
   return (
-    <section className="w-full gap-10 dark:text-white">
+    <section className="w-full gap-10 dark:text-white pt-20 sm:pt-8">
       <div className="flex justify-between items-center w-full">
         <h2 className="text-xl font-palanquin font-bold">
           <span className="text-coral-red bg">Favorite</span> Products
@@ -25,8 +25,8 @@ function Fav({ button = true }) {
       <div
         className={`${
           likeProds.length === 0
-            ? "flex justify-center items-center mt-5 gap-16 w-full min-h-[60vh]"
-            : "grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 mb-28"
+            ? "flex justify-center items-center mt-5 gap-16 w-full min-h-[70vh]"
+            : "grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 mb-28"
         }`}
       >
         {likeProds.length > 0 ? (
@@ -34,13 +34,13 @@ function Fav({ button = true }) {
             <Link
               key={el.id}
               to={`/products/${el.id}`}
-              className=" p-5 hover:cursor-pointer hover:bg-slate-50 rounded-lg dark:text-white dark:hover:bg-slate-900"
+              className=" p-5 hover:cursor-pointer hover:bg-slate-50 rounded-lg dark:text-white dark:hover:bg-[#141414]"
             >
               <LikeProdCard {...el} edit={edit} />
             </Link>
           ))
         ) : (
-          <h3 className=" font-palanquin info-text">
+          <h3 className=" font-palanquin info-text text-center">
             Items added to your Favourites will be saved here.
           </h3>
         )}
