@@ -6,7 +6,7 @@ function PreviewCard() {
   const [bigImg, setBigImg] = useState("");
   return (
     <div className="flex md:flex-row flex-col gap-3">
-      <div className="md:flex-col flex gap-3 order-1">
+      <div className="md:flex-col flex gap-3 md:order-first order-last">
         <img
           src={`https://${currentProd.imageUrl}`}
           alt="mainImg"

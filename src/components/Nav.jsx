@@ -47,30 +47,28 @@ function Nav() {
         </a>
         <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
           {navLinks.map((el) => (
-            <li key={el.label}>
-              <Link
-                to={el.href}
-                className="font-montserrat leading-normal text-lg text-slate-gray hover:text-coral-red ease-in-out duration-200"
-              >
-                {el.label}
-              </Link>
-            </li>
+            <Link
+              to={el.href}
+              className="font-montserrat leading-normal text-lg text-slate-gray hover:text-coral-red ease-in-out duration-200"
+            >
+              <li key={el.label}>{el.label}</li>
+            </Link>
           ))}
         </ul>
         <div className="max-lg:justify-start items-center flex gap-5  text-2xl">
-          <div
-            title="Favourites"
-            className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
-          >
-            <Link to={"favorites"}>
+          <Link to={"favorites"}>
+            <div
+              title="Favourites"
+              className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
+            >
               <AiFillHeart className="color: text-coral-red" />
-            </Link>
-          </div>
-          <div
-            title="Bag"
-            className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer dark:text-white dark:hover:text-black"
-          >
-            <Link to="cart">
+            </div>
+          </Link>
+          <Link to="cart">
+            <div
+              title="Bag"
+              className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer dark:text-white dark:hover:text-black"
+            >
               <div className="relative">
                 <AiOutlineShoppingCart />
                 {cardProds.length > 0 && (
@@ -79,8 +77,8 @@ function Nav() {
                   </div>
                 )}
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
           <div className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer">
             {/* <div className=" flex gap-3  text-2xl max-lg:items-center max-lg:justify-center">
             <div

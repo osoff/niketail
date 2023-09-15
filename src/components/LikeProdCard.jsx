@@ -41,7 +41,7 @@ function LikeProdCard({ id, imgURL, name, price, edit }) {
               bgC={"bg-transparent"}
               txtColor={"text-white"}
               onClick={(e) => e.preventDefault()}
-              otherStyle={"w-full"}
+              otherStyle={"w-full  min-[1390px]:w-auto"}
             >
               <span className=" text-black dark:text-white  text-xs">
                 Added

@@ -20,7 +20,7 @@ function MainViewProduct({ idProd }) {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <section className="flex md:justify-around md:flex-row md:items-start flex-col items-center md:pt-5 gap-3 pt-10">
+    <section className="flex md:justify-evenly md:flex-row md:items-start flex-col items-center sm:pt-5 pt-16 gap-3 ">
       <PreviewCard />
       <DescriptionProd />
     </section>

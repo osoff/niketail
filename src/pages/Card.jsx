@@ -11,7 +11,7 @@ function Card() {
   }, []);
   return (
     <>
-      <section className="padding w-full dark:text-white">
+      <section className="padding w-full dark:text-white sm:mt-4 mt-10">
         <CartElements />
       </section>
       {likeProds.length > 0 && (
