@@ -5,7 +5,7 @@ import { useProduct } from "../contexts/ProductsContexts";
 function Chekout() {
   const { cardProds } = useProduct();
   return (
-    <div className="flex flex-col shadow-xl  p-10 rounded-md dark:border-[1px] dark: white">
+    <div className="flex flex-col shadow-xl lg:w-auto w-full p-10 rounded-md dark:border-[1px] dark: white">
       <h2 className=" font-palanquin text-2xl font-bold text-coral-red ">
         Summary
       </h2>

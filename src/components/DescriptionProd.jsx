@@ -20,7 +20,7 @@ function DescriptionProd() {
     price: price?.current.text,
   };
   return (
-    <div className="flex-col flex w-[30rem] gap-5">
+    <div className="flex-col flex md:w-[30rem] w-full gap-5 ">
       <h2 className=" font-palanquin text-3xl  font-bold text-coral-red ">
         {currentProd.name}
       </h2>

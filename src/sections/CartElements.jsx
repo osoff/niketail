@@ -6,12 +6,12 @@ function CartElements() {
   const { cardProds } = useProduct();
   return (
     <div className=" min-h-[60vh]  max-container">
-      <div className="flex w-full justify-around items-start mt-4">
-        <div className="w-1/2">
+      <div className="flex lg:flex-row flex-col w-full lg:justify-around justify-center lg:items-start items-center mt-4">
+        <div className="lg:w-1/2">
           <h2 className=" text-3xl font-palanquin text-coral-red font-bold">
             Bag
           </h2>
-          <div className=" overflow-y-auto max-h-[75dvh] pr-6 ">
+          <div className=" lg:overflow-y-auto lg:max-h-[75dvh] pr-6 ">
             {cardProds.length > 0 ? (
               cardProds.map((el) => <CartProd key={el.imgURL} {...el} />)
             ) : (
