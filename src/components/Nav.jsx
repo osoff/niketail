@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { hamburger } from "../assets/icons";
 import { headerLogo } from "../assets/images";
 // import { hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
@@ -7,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiFillHeart, AiOutlineMenu } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { useProduct } from "../contexts/ProductsContexts";
-function Nav() {
+function Nav({ setOpenMenu }) {
   const [showNavBar, setShowNavBar] = useState(true);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const { cardProds } = useProduct();
@@ -48,10 +47,11 @@ function Nav() {
         <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
           {navLinks.map((el) => (
             <Link
+              key={el.label}
               to={el.href}
               className="font-montserrat leading-normal text-lg text-slate-gray hover:text-coral-red ease-in-out duration-200"
             >
-              <li key={el.label}>{el.label}</li>
+              <li>{el.label}</li>
             </Link>
           ))}
         </ul>
@@ -79,32 +79,12 @@ function Nav() {
               </div>
             </div>
           </Link>
-          <div className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer">
-            {/* <div className=" flex gap-3  text-2xl max-lg:items-center max-lg:justify-center">
-            <div
-              title="Favourites"
-              className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
-            >
-              <Link to={"favorites"}>
-                <AiFillHeart className="color: text-coral-red" />
-              </Link>
-            </div>
-            <div
-              title="Bag"
-              className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
-            >
-              <div className="relative inline-flex items-center">
-                <Link to="cart">
-                  <AiOutlineShoppingCart />
-                  <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
-                    20
-                  </div>
-                </Link>
-              </div>
-            </div> */}
+          <div
+            onClick={() => setOpenMenu(true)}
+            className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
+          >
             <AiOutlineMenu className="order-1 h-[24px] w-[24px]" />
           </div>
-          {/* </div> */}
         </div>
       </nav>
     </header>
