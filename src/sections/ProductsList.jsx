@@ -3,7 +3,7 @@ import { useProduct } from "../contexts/ProductsContexts";
 import PopularProdCard from "../components/PopularProdCard";
 
 function ProductsList() {
-  const { products, dispatch } = useProduct();
+  const { products } = useProduct();
   return (
     <div className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 mb-28">
       {products.map((el) => (

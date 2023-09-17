@@ -28,7 +28,7 @@ function DescriptionProd() {
         <h3 className="font-palanquin text-2xl">
           Brand: <span className=" font-bold">{currentProd.brandName}</span>
         </h3>
-        <h3 className=" font-semibold font-montserrat text-coral-red text-2xl leading-normal mt-4">
+        <h3 className="font-bold font-montserrat text-coral-red text-3xl leading-normal mt-4">
           {currentProd.price?.current.text}
         </h3>
       </div>

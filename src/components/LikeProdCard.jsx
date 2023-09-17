@@ -52,7 +52,7 @@ function LikeProdCard({ id, imgURL, name, price, edit }) {
               otherStyle={"w-full min-[1390px]:w-auto"}
               onClick={(e) => {
                 e.preventDefault();
-                addToCard({ imgURL, name, price });
+                addToCard({ id, imgURL, name, price });
               }}
             >
               <span className="  text-xs">Add to your bag</span>

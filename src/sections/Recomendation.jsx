@@ -8,7 +8,9 @@ function Recomendation() {
   return (
     recProds && (
       <>
-        <h2 className=" text-coral-re text-xl font-bold">You might like it</h2>
+        <h2 className=" text-coral-re text-xl font-bold dark:text-white">
+          You might like it
+        </h2>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 ">
           {recProds.map((el) => (
             <Link

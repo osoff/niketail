@@ -12,7 +12,7 @@ import Card from "./pages/Card";
 import Products from "./pages/Products";
 import ProductElement from "./pages/ProductElement";
 import BurgerNav from "./components/BurgerNav";
-
+import { AiOutlineUser } from "react-icons/ai";
 export default function App() {
   const [isDark, setIsDark] = useLocalStorage(false, "darkmode");
   const [openMenu, setOpenMenu] = useState(false);
@@ -33,21 +33,25 @@ export default function App() {
     <ProductsProviders>
       <BrowserRouter>
         {openMenu && (
-          <div className=" z-30 fixed top-0  right-0 bottom-0 flex flex-col bg-white dark:bg-black shadow-lg items-center duration-150 dark:text-white dark:shadow-coral-red ">
+          <div className="  text-2xl z-30 fixed top-0  right-0 bottom-0 flex flex-col bg-white dark:bg-black shadow-lg items-center duration-150 dark:text-white dark:shadow-coral-red ">
             <div
               className="flex justify-end w-full px-3"
               onClick={() => setOpenMenu(false)}
             >
               <p>&times;</p>
             </div>
-            <div className="p-10">
+            <div className="p-10 pr-28">
+              <div className="flex items-center gap-1">
+                <AiOutlineUser />
+                <h2 className=" font-bold">Hi Dear</h2>
+              </div>
               <BurgerNav setOpenMenu={setOpenMenu} />
             </div>
           </div>
         )}
         <main
           className={`relative dark:bg-black transition-colors ease-in duration-200 ${
-            openMenu && "blur-sm"
+            openMenu && "blur-md"
           }`}
         >
           <Nav setOpenMenu={setOpenMenu} />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { offer } from "../assets/images";
 import Button from "../components/Button";
 
@@ -29,14 +30,18 @@ function SpecialOffers() {
             is nothing short of exceptional.
           </p>
           <div className="mt-11 flex flex-wrap gap-4">
-            <Button>View details</Button>
-            <Button
-              bgC="bg-white"
-              borderC="border-slate-gray"
-              txtColor="text-slate-gray"
-            >
-              Learn more
-            </Button>
+            <Link to={"products"}>
+              <Button>View details</Button>
+            </Link>
+            <Link to={"products"}>
+              <Button
+                bgC="bg-white"
+                borderC="border-slate-gray"
+                txtColor="text-slate-gray"
+              >
+                Learn more
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

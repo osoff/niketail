@@ -11,7 +11,7 @@ function CartElements() {
           <h2 className=" text-3xl font-palanquin text-coral-red font-bold">
             Bag
           </h2>
-          <div className=" lg:overflow-y-auto lg:max-h-[75dvh] pr-6 ">
+          <div className=" lg:overflow-y-auto lg:max-h-[75dvh]  ">
             {cardProds.length > 0 ? (
               cardProds.map((el) => <CartProd key={el.imgURL} {...el} />)
             ) : (
