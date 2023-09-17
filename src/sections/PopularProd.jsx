@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import PopularProdCard from "../components/PopularProdCard";
 import { products } from "../constants";
 

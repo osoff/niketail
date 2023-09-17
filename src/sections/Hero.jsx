@@ -27,7 +27,7 @@ function Hero() {
           Discover stylish Nike arrivals, qualty comfort, and innovation for
           your active life
         </p>
-        <Link to={"products"}>
+        <Link to={"/niketail/products"}>
           <Button iconURL={arrowRight}>Shop now</Button>
         </Link>
         <div className="flex justify-start items-start flex-wrap w-full mt-20 gap-16 ">

@@ -17,7 +17,7 @@ function CartProd({ id, imgURL, name, price }) {
       />
       <div className="w-full ml-3 flex-col flex  justify-between">
         <div
-          onClick={() => navigate(`/products/${id}`)}
+          onClick={() => navigate(`/niketail/products/${id}`)}
           className=" cursor-pointer"
         >
           <div className="flex  font-bold justify-between sm:text-xl text-lg font-palanquin ">

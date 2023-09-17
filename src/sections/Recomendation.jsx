@@ -15,7 +15,7 @@ function Recomendation() {
           {recProds.map((el) => (
             <Link
               key={el.id}
-              to={`/products/${el.id}`}
+              to={`/niketail/products/${el.id}`}
               className=" p-5 hover:cursor-pointer hover:bg-slate-50 rounded-lg dark:text-white dark:hover:bg-slate-900"
             >
               <PopularProdCard

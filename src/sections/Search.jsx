@@ -17,7 +17,7 @@ function Search() {
   }
 
   useKey("Enter", setSerachParam);
-  useKey("Escape", () => navigate("/products"));
+  useKey("Escape", () => navigate("/niketail/products"));
 
   // useEffect(
   //   function () {

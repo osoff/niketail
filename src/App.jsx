@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import MainPage from "./pages/MainPage";
 import { ProductsProviders } from "./contexts/ProductsContexts";
 import DarkMode from "./components/DarkMode";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
 import Favorites from "./pages/Favorites";
 import Footer from "./sections/Footer";
 import Card from "./pages/Card";
@@ -56,11 +56,11 @@ export default function App() {
         >
           <Nav setOpenMenu={setOpenMenu} />
           <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="favorites" element={<Favorites />} />
-            <Route path="products" element={<Products />} />
-            <Route path="products/:id" element={<ProductElement />} />
-            <Route path="cart" element={<Card />} />
+            <Route path="/niketail/" element={<MainPage />} />
+            <Route path="/niketail/favorites" element={<Favorites />} />
+            <Route path="/niketail/products" element={<Products />} />
+            <Route path="/niketail/products/:id" element={<ProductElement />} />
+            <Route path="/niketail/cart" element={<Card />} />
           </Routes>
           <section className="bg-black padding-x padding-t pb-8">
             <Footer />

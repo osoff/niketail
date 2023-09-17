@@ -6,7 +6,7 @@ import { useEffect } from "react";
 function ProductElement() {
   const { id } = useParams();
   const navigate = useNavigate();
-  useKey("Escape", () => navigate("/products"));
+  useKey("Escape", () => navigate(-1));
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -9,7 +9,7 @@ function Footer() {
       <div className=" flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
         <div className="flex flex-col items-start">
           <a href="/">
-            <img src={footerLogo} width={150} height={46} />
+            <img src={footerLogo} width={150} height={46} alt="footerLogo" />
           </a>
           <p className="mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm">
             Get shoes ready for the new term at your nearest Nike store. Find
@@ -34,7 +34,7 @@ function Footer() {
               </h4>
               <ul>
                 {section.links.map((link) => (
-                  <Link key={link.name} to={`/products/${link.link}`}>
+                  <Link key={link.name} to={`/niketail/products/${link.link}`}>
                     <li className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:text-slate-gray cursor-pointer">
                       <p>{link.name}</p>
                     </li>

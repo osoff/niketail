@@ -48,7 +48,7 @@ function Nav({ setOpenMenu }) {
           {navLinks.map((el) => (
             <Link
               key={el.label}
-              to={el.href}
+              to={`/niketail/${el.href}`}
               className="font-montserrat leading-normal text-lg text-slate-gray hover:text-coral-red ease-in-out duration-200"
             >
               <li>{el.label}</li>
@@ -56,7 +56,7 @@ function Nav({ setOpenMenu }) {
           ))}
         </ul>
         <div className="max-lg:justify-start items-center flex gap-5  text-2xl">
-          <Link to={"favorites"}>
+          <Link to={"/niketail/favorites"}>
             <div
               title="Favourites"
               className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
@@ -64,7 +64,7 @@ function Nav({ setOpenMenu }) {
               <AiFillHeart className="color: text-coral-red" />
             </div>
           </Link>
-          <Link to="cart">
+          <Link to="/niketail/cart">
             <div
               title="Bag"
               className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer dark:text-white dark:hover:text-black"

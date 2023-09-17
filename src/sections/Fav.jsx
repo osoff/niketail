@@ -33,7 +33,7 @@ function Fav({ button = true }) {
           likeProds.map((el) => (
             <Link
               key={el.id}
-              to={`/products/${el.id}`}
+              to={`/niketail/products/${el.id}`}
               className=" p-5 hover:cursor-pointer hover:bg-slate-50 rounded-lg dark:text-white dark:hover:bg-[#141414]"
             >
               <LikeProdCard {...el} edit={edit} />
