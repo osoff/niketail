@@ -2,11 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/home/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/niketail/%60/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nike - Tail</title>
-    <script type="module" crossorigin src="/home/assets/index-70453b55.js"></script>
-    <link rel="stylesheet" href="/home/assets/index-ec645e8d.css">
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+    <script type="module" crossorigin src="/niketail/%60/assets/index-cbc42b5e.js"></script>
+    <link rel="stylesheet" href="/niketail/%60/assets/index-c78ab646.css">
   </head>
   <body>
     <div id="root"></div>
