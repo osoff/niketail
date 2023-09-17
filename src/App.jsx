@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import MainPage from "./pages/MainPage";
 import { ProductsProviders } from "./contexts/ProductsContexts";
 import DarkMode from "./components/DarkMode";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
 import Favorites from "./pages/Favorites";
 import Footer from "./sections/Footer";
 import Card from "./pages/Card";
@@ -56,7 +56,8 @@ export default function App() {
         >
           <Nav setOpenMenu={setOpenMenu} />
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="home" element={<MainPage />} />
+            <Route index element={<Navigate replace to="home" />} />
             <Route path="favorites" element={<Favorites />} />
             <Route path="products" element={<Products />} />
             <Route path="products/:id" element={<ProductElement />} />
