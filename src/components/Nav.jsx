@@ -41,9 +41,9 @@ function Nav({ setOpenMenu }) {
       }  ease-in duration-200`}
     >
       <nav className="flex  justify-between items-center max-container transition ease-in duration-200">
-        <a href="/">
+        <Link to="/niketail/">
           <img src={headerLogo} alt="logo" width={130} height={29} />
-        </a>
+        </Link>
         <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
           {navLinks.map((el) => (
             <Link
