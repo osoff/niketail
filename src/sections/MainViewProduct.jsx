@@ -2,7 +2,7 @@ import PreviewCard from "../components/PreviewCard";
 import { useEffect } from "react";
 import { useProduct } from "../contexts/ProductsContexts";
 import { dataAsos } from "../constants";
-import DescriptionProd from "../components/descriptionProd";
+import DescriptionProd from "../components/DescriptionProd";
 
 function MainViewProduct({ idProd }) {
   const { dispatch } = useProduct();
