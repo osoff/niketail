@@ -8,7 +8,7 @@ function BurgerNav({ setOpenMenu }) {
       {navLinks.map((el) => (
         <Link
           key={el.label}
-          to={`/niketail/el.href`}
+          to={`/niketail/${el.href}`}
           onClick={() => setOpenMenu(false)}
         >
           <li className=" font-palanquin ">{el.label}</li>
