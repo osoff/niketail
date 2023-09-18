@@ -12,6 +12,7 @@ import Card from "./pages/Card";
 import Products from "./pages/Products";
 import ProductElement from "./pages/ProductElement";
 import useOnClickOutside from "./hooks/useClickMouse";
+import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
   const [isDark, setIsDark] = useLocalStorage(false, "darkmode");
@@ -49,6 +50,7 @@ export default function App() {
                 element={<ProductElement />}
               />
               <Route path="/niketail/cart" element={<Card />} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
             <section className="bg-black padding-x padding-t pb-8">
               <Footer />
