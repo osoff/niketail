@@ -4,13 +4,13 @@ import { headerLogo } from "../assets/images";
 import { navLinks } from "../constants";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiFillHeart, AiOutlineMenu } from "react-icons/ai";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useProduct } from "../contexts/ProductsContexts";
-function Nav({ setOpenMenu }) {
+import Menu from "./Menu";
+function Nav({ node, openMenu, setOpenMenu }) {
   const [showNavBar, setShowNavBar] = useState(true);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const { cardProds } = useProduct();
-
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -79,11 +79,14 @@ function Nav({ setOpenMenu }) {
               </div>
             </div>
           </Link>
-          <div
-            onClick={() => setOpenMenu(true)}
-            className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
-          >
-            <AiOutlineMenu className="order-1 h-[24px] w-[24px]" />
+          <div>
+            <div
+              onClick={() => setOpenMenu(true)}
+              className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
+            >
+              <AiOutlineMenu className="order-1 h-[24px] w-[24px]" />
+            </div>
+            <Menu node={node} open={openMenu} setOpen={setOpenMenu} />
           </div>
         </div>
       </nav>
