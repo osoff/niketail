@@ -86,7 +86,9 @@ function Nav({ node, openMenu, setOpenMenu }) {
             >
               <AiOutlineMenu className="order-1 h-[24px] w-[24px]" />
             </div>
-            <Menu node={node} open={openMenu} setOpen={setOpenMenu} />
+            <div ref={node}>
+              <Menu open={openMenu} setOpen={setOpenMenu} />
+            </div>
           </div>
         </div>
       </nav>

@@ -17,7 +17,8 @@ export default function App() {
   const [isDark, setIsDark] = useLocalStorage(false, "darkmode");
   const [openMenu, setOpenMenu] = useState(false);
   const node = useRef();
-  useOnClickOutside(node, () => setOpenMenu(false));
+  const node1 = useRef();
+  useOnClickOutside([node, node1], () => setOpenMenu(false));
 
   useEffect(
     function () {
@@ -54,7 +55,7 @@ export default function App() {
             </section>
           </div>
         </main>
-        <DarkMode node={node} setIsDark={setIsDark} isDark={isDark} />
+        <DarkMode node={node1} setIsDark={setIsDark} isDark={isDark} />
       </BrowserRouter>
     </ProductsProviders>
   );
