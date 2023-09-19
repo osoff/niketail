@@ -40,7 +40,7 @@ export default function App() {
           className={`relative dark:bg-black transition-colors ease-in duration-200 `}
         >
           <Nav node={node} setOpenMenu={setOpenMenu} openMenu={openMenu} />
-          <div className={`${openMenu && "blur-md"}`}>
+          <div className={`${openMenu && "blur-md duration-500"}`}>
             <Routes>
               <Route path="/niketail/" element={<MainPage />} />
               <Route path="/niketail/favorites" element={<Favorites />} />
