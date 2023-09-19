@@ -36,13 +36,15 @@ function Nav({ node, openMenu, setOpenMenu }) {
   }, [prevScrollY]);
   return (
     <header
-      className={`padding-x py-8  z-20 w-full fixed  dark:bg-black bg-white bg-opacity-90 dark:bg-opacity-70 dark:text-white ${
+      className={`padding-x py-7  z-20 w-full fixed  dark:bg-black bg-white bg-opacity-90 dark:bg-opacity-70 dark:text-white ${
         showNavBar ? "top-0" : "-top-16"
       } transition-all ease-in-out duration-500  `}
     >
       <nav className="flex  justify-between items-center max-container ">
         <Link to="/niketail/">
-          <img src={headerLogo} alt="logo" width={130} height={29} />
+          <h1 className=" text-coral-red font-bold text-2xl font-palanquin">
+            <span className=" italic">OsOff /</span> Shop
+          </h1>
         </Link>
         <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
           {navLinks.map((el) => (

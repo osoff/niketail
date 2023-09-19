@@ -14,7 +14,7 @@ function SuperQuality() {
           We Provide You
           <span className="text-coral-red"> Super Quality</span> Shoes
           <br />
-          <span className="text-coral-red inline-block mt-3">Nike</span> Shoes
+          <span className="text-coral-red inline-block mt-3">OsOff</span> Shoes
         </h2>
         <p className="mt-4 lg:max-w-lg info-text">
           Ensuring premium comfort and style, our meticulously crafted footwear
