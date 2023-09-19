@@ -11,7 +11,7 @@ const options = [
 function Search() {
   const navigate = useNavigate();
 
-  const { search, setSearchPar, sortBy, setSelectedOption } = useProduct();
+  const { search, setSearchPar } = useProduct();
   function setSerachParam() {
     navigate(`?search=${search}`);
   }

@@ -34,12 +34,13 @@ function Products() {
               dispatch({
                 type: "products/loaded",
                 payload: data.data.products.filter((el) =>
-                  el.name.includes(search)
+                  el.name.toLowerCase().includes(search.toLowerCase())
                 ),
               });
               if (
-                data.data.products.filter((el) => el.name.includes(search))
-                  .length === 0
+                data.data.products.filter((el) =>
+                  el.name.toLowerCase().includes(search.toLowerCase())
+                ).length === 0
               ) {
                 throw new Error("Products not found");
               }
