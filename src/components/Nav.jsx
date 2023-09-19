@@ -38,9 +38,9 @@ function Nav({ node, openMenu, setOpenMenu }) {
     <header
       className={`padding-x py-8  z-20 w-full fixed  dark:bg-black bg-white bg-opacity-90 dark:bg-opacity-70 dark:text-white ${
         showNavBar ? "top-0" : "-top-16"
-      }  ease-in duration-200`}
+      } transition-all ease-in-out duration-500  `}
     >
-      <nav className="flex  justify-between items-center max-container transition ease-in duration-200">
+      <nav className="flex  justify-between items-center max-container ">
         <Link to="/niketail/">
           <img src={headerLogo} alt="logo" width={130} height={29} />
         </Link>
@@ -49,7 +49,7 @@ function Nav({ node, openMenu, setOpenMenu }) {
             <Link
               key={el.label}
               to={`/niketail/${el.href}`}
-              className="font-montserrat leading-normal text-lg text-slate-gray hover:text-coral-red ease-in-out duration-200"
+              className="font-montserrat leading-normal text-lg text-slate-gray hover:text-coral-red "
             >
               <li>{el.label}</li>
             </Link>
@@ -59,7 +59,7 @@ function Nav({ node, openMenu, setOpenMenu }) {
           <Link to={"/niketail/favorites"}>
             <div
               title="Favourites"
-              className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
+              className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 cursor-pointer"
             >
               <AiFillHeart className="color: text-coral-red" />
             </div>
@@ -67,10 +67,10 @@ function Nav({ node, openMenu, setOpenMenu }) {
           <Link to="/niketail/cart">
             <div
               title="Bag"
-              className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer dark:text-white dark:hover:text-black"
+              className="flex justify-center items-center hover:bg-white rounded-full h-10 w-10  cursor-pointer dark:text-white dark:hover:text-black"
             >
               <div className="relative">
-                <AiOutlineShoppingCart />
+                <AiOutlineShoppingCart className=" transition-none" />
                 {cardProds.length > 0 && (
                   <div className="absolute inline-flex items-center justify-center w-5 h-5 text-[11px] font-bold text-white bg-coral-red border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
                     {cardProds.length}
@@ -82,7 +82,7 @@ function Nav({ node, openMenu, setOpenMenu }) {
           <div>
             <div
               onClick={() => setOpenMenu(true)}
-              className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10 ease-in-out duration-100 cursor-pointer"
+              className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10  cursor-pointer"
             >
               <AiOutlineMenu className="order-1 h-[24px] w-[24px]" />
             </div>

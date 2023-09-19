@@ -54,7 +54,7 @@ function PopularProdCard({
           >
             {likeProds.map((el) => el.imgURL).includes(imgURL) ? (
               <AiFillHeart
-                className="mr-2 cursor-pointer text-coral-red ease-in duration-200"
+                className="mr-2 cursor-pointer text-coral-red"
                 size={"25"}
               />
             ) : (

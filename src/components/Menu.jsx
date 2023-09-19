@@ -14,7 +14,7 @@ function Menu({ open, setOpen, node }) {
       ref={node}
       className={` ${
         open ? "translate-x-0" : "translate-x-[120%]"
-      } top-0 right-0 fixed  z-30 text-3xl flex flex-col transition-transform duration-300 ease-in-out transf   font-palanquin shadow-xl dark:shadow-coral-red bg-white dark:bg-black h-screen `}
+      } top-0 right-0 fixed  z-30 text-3xl flex flex-col  duration-500 ease-in-out transition-all  font-palanquin shadow-xl dark:shadow-coral-red bg-white dark:bg-black h-screen `}
     >
       <div onClick={() => setOpen(false)} className="w-full flex justify-end">
         <p className="p-4">&times;</p>

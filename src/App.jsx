@@ -37,7 +37,7 @@ export default function App() {
     <ProductsProviders>
       <BrowserRouter>
         <main
-          className={`relative dark:bg-black transition-colors ease-in duration-200 `}
+          className={`relative dark:bg-black transition-all ease-in-out duration-500 `}
         >
           <Nav node={node} setOpenMenu={setOpenMenu} openMenu={openMenu} />
           <div className={`${openMenu && "blur-md duration-500"}`}>

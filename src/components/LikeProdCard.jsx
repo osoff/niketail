@@ -9,7 +9,7 @@ function LikeProdCard({ id, imgURL, name, price, edit }) {
     <div className="flex flex-1 flex-col w-full relative justify-between h-full">
       {edit && (
         <AiFillHeart
-          className=" absolute top-0 right-0 mt-2 mr-2 cursor-pointer text-coral-red ease-in duration-200 "
+          className=" absolute top-0 right-0 mt-2 mr-2 cursor-pointer text-coral-red  "
           size={"25"}
           color="red"
           onClick={(e) => {
