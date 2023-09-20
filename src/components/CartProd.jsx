@@ -38,7 +38,6 @@ function CartProd({ id, imgURL, name, price }) {
               size={"25"}
               onClick={() => {
                 deleteFromLike(id);
-                console.log(id);
               }}
             />
           ) : (

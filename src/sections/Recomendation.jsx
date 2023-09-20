@@ -4,7 +4,6 @@ import PopularProdCard from "../components/PopularProdCard";
 
 function Recomendation() {
   const { recProds } = useProduct();
-  console.log(recProds);
   return (
     recProds && (
       <>
