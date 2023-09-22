@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import { headerLogo } from "../assets/images";
-// import { hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiFillHeart, AiOutlineMenu } from "react-icons/ai";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useProduct } from "../contexts/ProductsContexts";
 import Menu from "./Menu";
 function Nav({ node, openMenu, setOpenMenu }) {

@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
-import { dataAsos, products } from "../constants";
+import { dataAsos } from "../constants";
 
 const ProductsContext = createContext();
 

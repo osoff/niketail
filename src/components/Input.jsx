@@ -8,7 +8,6 @@ function Input({
   padding = "2.5",
   getInputData,
   actionButton,
-  val,
 }) {
   const [params] = useSearchParams();
   const search = params.get("search");

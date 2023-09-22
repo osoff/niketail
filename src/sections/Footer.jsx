@@ -8,9 +8,9 @@ function Footer() {
     <footer className="max-container">
       <div className=" flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
         <div className="flex flex-col items-start">
-          <a href="/">
-            <img src={footerLogo} width={150} height={46} alt="footerLogo" />
-          </a>
+          <h1 className=" text-coral-red font-bold text-2xl font-palanquin">
+            <span className=" italic">OsOff /</span> Shop
+          </h1>
           <p className="mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm">
             Get shoes ready for the new term at your nearest OsOff store. Find
             Your perfect Size In Store. Get Rewards
