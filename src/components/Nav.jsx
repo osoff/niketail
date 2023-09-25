@@ -82,7 +82,7 @@ function Nav({ node, openMenu, setOpenMenu }) {
           <div>
             <div
               onClick={() => setOpenMenu(true)}
-              className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10  cursor-pointer"
+              className="hidden max-lg:flex  max-lg:content-end justify-center items-center hover:bg-white rounded-full h-10 w-10  cursor-pointer dark:hover:text-black"
             >
               <AiOutlineMenu className="order-1 h-[24px] w-[24px]" />
             </div>
